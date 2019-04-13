@@ -1,3 +1,3 @@
-[submodule "themes/hueman"]
-	path = themes/hueman
+[submodule "themes/hexo-theme-hueman"]
+	path = themes/hexo-theme-hueman
 	url = https://github.com/shawn686/hexo-theme-hueman.git
