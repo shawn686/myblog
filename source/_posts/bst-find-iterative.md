@@ -6,7 +6,6 @@ tags:
 - datastructure
 - tree
 - BST
-- search
 - iterative
 - fundamental
 categories:
