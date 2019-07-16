@@ -11,6 +11,7 @@ categories:
 ---
 ## Queue and PriorityQueue Implementation of Dijkstra's Algorithm
 Given a weighted graph, starting from a source node, return the shortest path to other nodes.
+The drawback is that we can apply it to graphs which contain negative weighted edges.
 
 ![A Directed Graph](https://user-images.githubusercontent.com/24547983/61260010-a047f680-a74a-11e9-8895-9d8809534e57.png)
 
