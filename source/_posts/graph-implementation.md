@@ -1,16 +1,15 @@
 ---
-title: A Typical Graph Implementation
+title: Topological Ordering Iterative / DFS
 date: 2019-06-03 09:05:06
 tags:
 - java
-- python
 - datastructure
 - fundamental
 - graph
 categories:
 - [datastructure, graph]
 ---
-## A typical implementation of graph
+## Topological Ordering Iterative / DFS
 
 ``` java
 
