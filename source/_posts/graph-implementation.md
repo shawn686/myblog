@@ -233,3 +233,68 @@ ans = []
 bfs(node_f, visited, ans)
 print(ans)
 ```
+
+```python
+# dfs topological sorting
+
+class Node:
+    def __init__(self, name):
+        self.name = name
+        self.adj = set()
+
+    def add_adj(self, node):
+        self.adj.add(node)
+
+def dfs(root, visited, ans):
+    if root.name in visited:
+        return visited[root.name]
+
+    visited[root.name] = False
+
+    for node in root.adj:
+        if dfs(node, visited, ans) == False:
+            return False
+
+    visited[root.name] = True                                                                               
+    ans.append(root.name)
+
+    return True
+
+def topo_sort(graph):
+    ans = []
+    visited = {}
+
+    for node in graph:    
+        if dfs(node, visited, ans) == False:
+            return None
+
+    return "".join(ans[::-1])
+
+node_a = Node('a')
+node_b = Node('b')
+node_c = Node('c')
+node_d = Node('d')                                                                                                  
+node_e = Node('e')
+node_f = Node('f')
+node_g = Node('g')
+
+node_a.add_adj(node_b)
+node_a.add_adj(node_c)
+# node_a.add_adj(node_e)
+
+node_b.add_adj(node_c)
+node_b.add_adj(node_d)
+
+node_c.add_adj(node_e)
+
+# node_d.add_adj(node_e)
+
+#node_e.add_adj(node_c)
+node_e.add_adj(node_a)
+
+node_f.add_adj(node_b)
+
+graph = [node_a, node_b, node_c, node_d, node_e, node_f, node_g]
+print(topo_sort(graph))
+
+```
