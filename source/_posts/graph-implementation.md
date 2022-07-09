@@ -175,3 +175,61 @@ public class Graph {
     }
 }
 ```
+
+```python
+# topological sorting in python
+
+from collections import deque
+
+class Node:
+    def __init__(self, name):
+        self.name = name
+        self.adj = set()
+
+    def add_adj(self, node):
+        self.adj.add(node)
+
+def bfs(node, visited, ans):
+    q = deque()
+    q.append(node)
+    visited.add(node.name)
+
+    while len(q) != 0:
+        temp = q.popleft()
+        ans.append(temp.name)
+
+        for nei in temp.adj:
+            if nei.name not in visited:
+                visited.add(nei.name)
+                q.append(nei)
+
+node_a = Node('a')
+node_b = Node('b')
+node_c = Node('c')
+node_d = Node('d')
+node_e = Node('e')
+node_f = Node('f')
+node_g = Node('g')
+
+node_a.add_adj(node_b)
+node_a.add_adj(node_c)
+node_a.add_adj(node_e)
+
+node_b.add_adj(node_c)
+node_b.add_adj(node_d)
+
+node_c.add_adj(node_e)
+
+# node_d.add_adj(node_e)
+
+# node_e.add_adj(node_c)
+# node_e.add_adj(node_a)
+
+node_f.add_adj(node_b)
+
+visited = set()
+ans = []
+
+bfs(node_f, visited, ans)
+print(ans)
+```
